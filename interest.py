@@ -14,15 +14,15 @@ y= np.array(['t3','t4','t5','t6','t7','t8','t9','t10'])
 
 
 in1 =  lambda x, y : np.prod(np.setdiff1d(x,y).shape)
-print(in1(x,y))
-print(in1(y,x))
+# print(in1(x,y))
+# print(in1(y,x))
+#
+# print(common(x,y))
 
-print(common(x,y))
-
-interest = lambda x,y : min(common(x,y),in1(x,y),in1(y,x))
+interest = lambda x,y,z,k : -min(common(x.arr,y.arr),in1(x.arr,y.arr),in1(y.arr,x.arr))
 
 
-print(interest(x,y))
+# print(interest(x,y))
 
 
 
