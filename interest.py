@@ -19,7 +19,7 @@ in1 =  lambda x, y : np.prod(np.setdiff1d(x,y).shape)
 #
 # print(common(x,y))
 
-interest = lambda x,y,z,k : -min(common(x.arr,y.arr),in1(x.arr,y.arr),in1(y.arr,x.arr))
+interest = lambda x,y,z,k : min(common(x.arr,y.arr),in1(x.arr,y.arr),in1(y.arr,x.arr))
 
 
 # print(interest(x,y))

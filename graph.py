@@ -13,15 +13,18 @@ for f in data :
     for inf in data :
         graph.add_edge(f,inf,{'cost':interest(f,inf,0,0)})
 
-# print(str(graph))
-# print(find_path(graph,y,z,cost_func= interest))
-print(single_source_shortest_paths(graph,y,cost_func= interest))
+
+print(graph.get(y))
+for i in data :
+    max = [0,None,None]
+    for inf in data:
+        ret = graph.get(i)[inf]['cost']
+        if ret > max[0]:
+            max[0] = ret
+            max[1] = inf.id
+            max[2] = i.id
+    graph.pop(i)
+    np.delete(data,i.id)
+    print(max)
 
 
-#
-
-# graph = Graph()
-# graph.add_edge(1, 2, {'cost': 1})
-# graph.add_edge(2, 3, {'cost': 2})
-# cost_func = lambda u, v, e, prev_e: e['cost']
-# print(find_path(graph, 1, 2, cost_func=cost_func))
